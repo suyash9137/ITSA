@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: system-ui;
+  --font-mono: monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #0F1216;
+}
+
+body {
+  background-color: #0F1216;
+  color: #F4F2EA;
+  font-family: var(--font-display);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #E3A857;
+  color: #0F1216;
+}
+
+/* visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #E3A857;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1216;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B3140;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8C6B39;
+}
+
+.trace-line {
+  stroke: #2B3140;
+  stroke-width: 1;
+  fill: none;
+}
+
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: #9AA3B2;
+}
+
+/* Lenis smooth scroll requirement */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

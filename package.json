@@ -1,0 +1,11 @@
+{
+  "name": "itsa-pvppcoe-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix itsa-website",
+    "build": "npm run build --prefix itsa-website",
+    "start": "npm run start --prefix itsa-website",
+    "lint": "npm run lint --prefix itsa-website"
+  }
+}
